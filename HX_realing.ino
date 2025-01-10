@@ -43,7 +43,13 @@ void Real(){
 void setup() {
   Serial.begin(9600);
   Serial.println("demarrage");
+  Serial.println(scale.begin(DOUT, CLK));
+  Serial.println(calibration_factor);
+  Serial.println(DOUT);
+  Serial.println(CLK);
+  Serial.println(scale.set_scale(calibration_factor));
 
+  
   scale.begin(DOUT, CLK);
   scale.set_scale(calibration_factor); //This value is obtained by using the SparkFun_HX711_Calibration sketch
   delay(6000);
